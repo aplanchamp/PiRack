@@ -1,5 +1,11 @@
 /* app css stylesheet */
 
+
+body,html {
+  /*height added in order to fill the entire login page with the bg image*/
+  height:100% !important;
+}
+
 /*Login page*/
 
 .login-background {
