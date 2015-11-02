@@ -1,0 +1,169 @@
+<div class="navbar navbar-default navbar-static-top background-nav-bar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand menu-style" href="#/login">Log out</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav menu-style">
+        <li class="active"><a href="#/information">Manage</a></li>
+        <li><a href="#/install">Install</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right menu-style">
+        <li><a href="#about">About</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
+
+<div class="container-fluid">
+    <div class="pricing-table pricing-three-column row">
+        <div class="plan col-sm-1 col-lg-1" ng-repeat="rasp in raspberry">
+          <div class="plan-name-normal">
+            <h4>{{rasp.id}}</h4>
+            <span>{{rasp.pile}} / {{rasp.level}}</span>
+          </div>
+          <ul class="padding-ul-tab">
+            <li class="plan-feature">{{rasp.onoff}}</li>
+            <li class="plan-feature">{{rasp.cpu}}</li>
+            <li class="plan-feature">{{rasp.ping}}</li>
+            <li class="plan-feature"><a href="#" class="btn btn-success btn-login btn-plan-select"><i class="icon-white icon-ok"></i> Ping</a></li>
+             <li class="plan-feature"><a href="#" class="btn btn-success btn-login btn-plan-select"><i class="icon-white icon-ok"></i>Details</a></li>
+          </ul>
+        </div>        
+         <!--<div class="plan col-sm-1 col-lg-1">
+          <div class="plan-name-normal">
+            <h4>1</h4>
+            <span>Pile 1 / Level 4</span>
+          </div>
+          <ul class="padding-ul-tab">
+            <li class="plan-feature">On/Off</li>
+            <li class="plan-feature">CPU 55%</li>
+            <li class="plan-feature">Last ping 26/10/2015 10:56</li>
+            <li class="plan-feature"><a href="#" class="btn btn-success btn-login btn-plan-select"><i class="icon-white icon-ok"></i> Ping</a></li>
+             <li class="plan-feature"><a href="#" class="btn btn-success btn-login btn-plan-select"><i class="icon-white icon-ok"></i>Details</a></li>
+          </ul>
+        </div>        
+        <div class="plan col-sm-1 col-lg-1">
+          <div class="plan-name-normal">
+            <h4>1</h4>
+            <span>Pile 1 / Level 4</span>
+          </div>
+          <ul class="padding-ul-tab">
+            <li class="plan-feature">On/Off</li>
+            <li class="plan-feature">CPU 55%</li>
+            <li class="plan-feature">Last ping 26/10/2015 10:56</li>
+            <li class="plan-feature"><a href="#" class="btn btn-success btn-login btn-plan-select"><i class="icon-white icon-ok"></i> Ping</a></li>
+             <li class="plan-feature"><a href="#" class="btn btn-success btn-login btn-plan-select"><i class="icon-white icon-ok"></i>Details</a></li>
+          </ul>
+        </div>        
+        <div class="plan col-sm-1 col-lg-1">
+          <div class="plan-name-normal">
+            <h4>1</h4>
+            <span>Pile 1 / Level 4</span>
+          </div>
+          <ul class="padding-ul-tab">
+            <li class="plan-feature">On/Off</li>
+            <li class="plan-feature">CPU 55%</li>
+            <li class="plan-feature">Last ping 26/10/2015 10:56</li>
+            <li class="plan-feature"><a href="#" class="btn btn-success btn-login btn-plan-select"><i class="icon-white icon-ok"></i> Ping</a></li>
+             <li class="plan-feature"><a href="#" class="btn btn-success btn-login btn-plan-select"><i class="icon-white icon-ok"></i>Details</a></li>
+          </ul>
+        </div>             
+        <div class="plan col-sm-1 col-lg-1">
+          <div class="plan-name-normal">
+            <h4>1</h4>
+            <span>Pile 1 / Level 4</span>
+          </div>
+          <ul class="padding-ul-tab">
+            <li class="plan-feature">On/Off</li>
+            <li class="plan-feature">CPU 55%</li>
+            <li class="plan-feature">Last ping 26/10/2015 10:56</li>
+            <li class="plan-feature"><a href="#" class="btn btn-success btn-login btn-plan-select"><i class="icon-white icon-ok"></i> Ping</a></li>
+             <li class="plan-feature"><a href="#" class="btn btn-success btn-login btn-plan-select"><i class="icon-white icon-ok"></i>Details</a></li>
+          </ul>
+        </div>        
+        <div class="plan col-sm-1 col-lg-1">
+          <div class="plan-name-normal">
+            <h4>1</h4>
+            <span>Pile 1 / Level 4</span>
+          </div>
+          <ul class="padding-ul-tab">
+            <li class="plan-feature">On/Off</li>
+            <li class="plan-feature">CPU 55%</li>
+            <li class="plan-feature">Last ping 26/10/2015 10:56</li>
+            <li class="plan-feature"><a href="#" class="btn btn-success btn-login btn-plan-select"><i class="icon-white icon-ok"></i> Ping</a></li>
+             <li class="plan-feature"><a href="#" class="btn btn-success btn-login btn-plan-select"><i class="icon-white icon-ok"></i>Details</a></li>
+          </ul>
+        </div>        
+        <div class="plan col-sm-1 col-lg-1">
+          <div class="plan-name-normal">
+            <h4>1</h4>
+            <span>Pile 1 / Level 4</span>
+          </div>
+          <ul class="padding-ul-tab">
+            <li class="plan-feature">On/Off</li>
+            <li class="plan-feature">CPU 55%</li>
+            <li class="plan-feature">Last ping 26/10/2015 10:56</li>
+            <li class="plan-feature"><a href="#" class="btn btn-success btn-login btn-plan-select"><i class="icon-white icon-ok"></i> Ping</a></li>
+             <li class="plan-feature"><a href="#" class="btn btn-success btn-login btn-plan-select"><i class="icon-white icon-ok"></i>Details</a></li>
+          </ul>
+        </div>             
+        <div class="plan col-sm-1 col-lg-1">
+          <div class="plan-name-normal">
+            <h4>1</h4>
+            <span>Pile 1 / Level 4</span>
+          </div>
+          <ul class="padding-ul-tab">
+            <li class="plan-feature">On/Off</li>
+            <li class="plan-feature">CPU 55%</li>
+            <li class="plan-feature">Last ping 26/10/2015 10:56</li>
+            <li class="plan-feature"><a href="#" class="btn btn-success btn-login btn-plan-select"><i class="icon-white icon-ok"></i> Ping</a></li>
+             <li class="plan-feature"><a href="#" class="btn btn-success btn-login btn-plan-select"><i class="icon-white icon-ok"></i>Details</a></li>
+          </ul>
+        </div>        
+        <div class="plan col-sm-1 col-lg-1">
+          <div class="plan-name-normal">
+            <h4>1</h4>
+            <span>Pile 1 / Level 4</span>
+          </div>
+          <ul class="padding-ul-tab">
+            <li class="plan-feature">On/Off</li>
+            <li class="plan-feature">CPU 55%</li>
+            <li class="plan-feature">Last ping 26/10/2015 10:56</li>
+            <li class="plan-feature"><a href="#" class="btn btn-success btn-login btn-plan-select"><i class="icon-white icon-ok"></i> Ping</a></li>
+             <li class="plan-feature"><a href="#" class="btn btn-success btn-login btn-plan-select"><i class="icon-white icon-ok"></i>Details</a></li>
+          </ul>
+        </div>        
+        <div class="plan col-sm-1 col-lg-1">
+          <div class="plan-name-normal">
+            <h4>1</h4>
+            <span>Pile 1 / Level 4</span>
+          </div>
+          <ul class="padding-ul-tab">
+            <li class="plan-feature">On/Off</li>
+            <li class="plan-feature">CPU 55%</li>
+            <li class="plan-feature">Last ping 26/10/2015 10:56</li>
+            <li class="plan-feature"><a href="#" class="btn btn-success btn-login btn-plan-select"><i class="icon-white icon-ok"></i> Ping</a></li>
+             <li class="plan-feature"><a href="#" class="btn btn-success btn-login btn-plan-select"><i class="icon-white icon-ok"></i>Details</a></li>
+          </ul>
+        </div>        
+         <div class="plan col-sm-1 col-lg-1">
+          <div class="plan-name-normal">
+            <h4>1</h4>
+            <span>Pile 1 / Level 4</span>
+          </div>
+          <ul class="padding-ul-tab">
+            <li class="plan-feature">On/Off</li>
+            <li class="plan-feature">CPU 55%</li>
+            <li class="plan-feature">Last ping 26/10/2015 10:56</li>
+            <li class="plan-feature"><a href="#" class="btn btn-success btn-login btn-plan-select"><i class="icon-white icon-ok"></i> Ping</a></li>
+             <li class="plan-feature"><a href="#" class="btn btn-success btn-login btn-plan-select"><i class="icon-white icon-ok"></i>Details</a></li>
+          </ul>
+        </div>                     -->
+    </div>
+</div><!-- /.container -->
