@@ -6,6 +6,7 @@ body,html {
   height:100% !important;
 }
 
+
 /*Login page*/
 
 .login-background {
@@ -29,9 +30,23 @@ body,html {
 	background-color: #2E8B57;
 }
 
-/*.background-nav-bar {
-  background-color: #COC0C0;
-}*/
+
+/*About page*/
+
+
+
+.about-custom-margin{
+  margin-right: 100px;
+  margin-left: 100px;
+}
+
+/*Information page*/
+
+
+
+.custom-info-sign {
+  color:white;
+}
 
 .menu-style li a, .menu-style{
   color: #2E8B57 !important;
@@ -77,11 +92,20 @@ body,html {
   
 .plan-name-normal {
   padding: 5px;
-  color: #fff;
   background-color: #2E8B57;
   -moz-border-radius: 5px 5px 0 0;
   -webkit-border-radius: 5px 5px 0 0;
   border-radius: 5px 5px 0 0;
+ }
+
+ .pricing-table {
+  text-align: center;
+ }
+
+ .pricing-table ul {
+    text-align: center;
+       display: inline-block;
+    vertical-align: top;
  }
   
 .plan-name-error {
@@ -103,6 +127,8 @@ body,html {
   -moz-border-radius: 0 0 5px 5px;
   -webkit-border-radius: 0 0 5px 5px;
   border-radius: 0 0 5px 5px;
+  display: inline-block;
+  vertical-align: top;
 }
  
 .pricing-table .plan ul li.plan-feature {
@@ -131,3 +157,9 @@ body,html {
 .btn-plan-select {
   font-size: 10px;
 }
+
+
+
+
+
+

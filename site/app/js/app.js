@@ -4,7 +4,8 @@
 
 var pirackApp = angular.module('pirackApp', [
   'ngRoute',
-  'pirackControllers'
+  'pirackControllers',
+  'ui.bootstrap'
 ]);
 
 pirackApp.config(['$routeProvider',
@@ -26,6 +27,10 @@ pirackApp.config(['$routeProvider',
         templateUrl: 'partials/about.html',
         controller: 'aboutCtrl'
       }).      
+      // when('/myModal', {
+      //   templateUrl: 'partials/modal.html',
+      //   controller: 'modalCtrl'
+      // }).    
       otherwise({
         redirectTo: '/login'
       });

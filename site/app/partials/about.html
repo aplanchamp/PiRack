@@ -19,3 +19,35 @@
     </div><!--/.nav-collapse -->
   </div>
 </div>
+
+
+<div class="container-fluid">
+    <div class="modal-content about-custom-margin">    
+      <div class="modal-header">
+          <h1 class="text-center">About the project</h1>
+      </div>
+      <div class="modal-body">
+        <p class="text-center">This website was developed according to project conducted by a 6 member team within ENSEIRB MATMECA, an engineering school. The purpose of this website is to control a Pirack composed of 48 Raspberry Pi. The aim behind this preliminary work is to create many Piracks and to make them communicate in order to study and test distributed algorithms.</p>
+
+
+        
+        <div id="pricing-table" class="pricing-table">
+          <ul class="plan" ng-repeat="member in members">
+            <div class="plan-name-normal">
+               <img class="img-responsive img-rounded center-block" ng-src="{{member.picture}}" height="100" width="100">
+              </div> 
+              <ul class="padding-ul-tab">
+                <li class="plan-feature">{{member.name}}</li>
+                <li class="plan-feature">{{member.role}}</li>
+              </ul>
+                   </div>
+          </ul>
+        </div>
+      <div class="modal-footer">
+        <p class="small text-center">S9 Project - ENSEIRB MATMECA - Control your Pirack </p>
+      </div>
+    </div> 
+</div>
+
+
+<!-- http://www.w3schools.com/bootstrap/bootstrap_ref_comp_glyphs.asp -->
