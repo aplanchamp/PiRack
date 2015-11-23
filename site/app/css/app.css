@@ -42,10 +42,18 @@ body,html {
 
 /*Information page*/
 
+/* Serach bar */
+
+.custom-search-bar {
+  padding-top: 12px;
+  font-weight: normal;
+}
+
 
 
 .custom-info-sign {
   color:white;
+  cursor: pointer;
 }
 
 .menu-style li a, .menu-style{

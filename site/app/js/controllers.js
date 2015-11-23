@@ -28,38 +28,82 @@ pirackControllers.controller('informationCtrl', ['$scope', '$http', function($sc
     title: 'Additional information'
   };
 
+
+  $scope.query = {}
+  $scope.queryBy = '$';
+
   $scope.raspberry = [
+
+  {
+    'id': '1',
+    'address': {
+        'ip': '172.0.0.1',
+        'mac': '00:EF:4G:00:45:AA'
+    },
+    'status': {
+        'cpu': '22',
+        'power': 'On',
+        'Lping': "24/65/2015 22h50"
+    },
+    'position': {
+        'stack': '2',
+        'level': '4'
+     },
+     'uri': ''
+  },
+  {
+    'id': '2',
+    'address': {
+        'ip': '172.0.0.1',
+        'mac': '00:EF:4G:00:45:BB'
+    },
+    'status': {
+        'cpu': '22',
+        'power': 'On',
+        'Lping': "24/65/2015 22h50"
+    },
+    'position': {
+        'stack': '2',
+        'level': '4'
+     },
+     'uri': ''
+  },
+  {
+    'id': '3',
+    'address': {
+        'ip': '172.0.0.1',
+        'mac': '00:EF:4G:00:45:CC'
+    },
+    'status': {
+        'cpu': '22',
+        'power': 'On',
+        'Lping': "24/65/2015 22h50"
+    },
+    'position': {
+        'stack': '2',
+        'level': '4'
+     },
+     'uri': ''
+  },
+  {
+    'id': '4',
+    'address': {
+        'ip': '172.0.0.1',
+        'mac': '00:EF:4G:00:45:DD'
+    },
+    'status': {
+        'cpu': '22',
+        'power': 'On',
+        'Lping': "24/65/2015 22h50"
+    },
+    'position': {
+        'stack': '2',
+        'level': '4'
+     },
+     'uri': ''
+  }  
   
-   {'id': '1',
-     'cpu': '22',
-     'power': 'On',
-     'position': {
-       'stack': '2',
-       'level': '4',
-     },
-     'Lping': '25/10/1992',
-     'mac': '00:EF:4G:00:45:OP',
-     'ip': '172.0.0.1'},
-    {'id': '1',
-     'cpu': '22',
-     'power': 'On',
-     'position': {
-       'stack': '2',
-       'level': '4',
-     },
-     'Lping': '25/10/1992',
-     'mac': '00:EF:4G:00:4G:00',
-     'ip': '172.0.0.1'},
-     {'id': '1',
-     'cpu': '22',
-     'power': 'On',
-     'position': {
-       'stack': '2',
-       'level': '4',
-     },
-     'Lping': '25/10/1992',
-     'mac': '00:EF:4G:00:4G:00',
-     'ip': '172.0.0.1'}    
+
  ];     
 
 }]);

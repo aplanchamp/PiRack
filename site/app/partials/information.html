@@ -12,6 +12,13 @@
       <ul class="nav navbar-nav menu-style">
         <li class="active"><a href="#/information">Manage</a></li>
         <li><a href="#/install">Install</a></li>
+        <li>
+          <p class="custom-search-bar">Search Any: <input ng-model="query.$">
+            ID: <input ng-model="query.id"></label>
+            MAC: <input ng-model="query.address.mac">
+            IP: <input ng-model="query.address.ip">
+          </p>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right menu-style">
         <li><a href="#about">About</a></li>
@@ -19,24 +26,25 @@
     </div><!--/.nav-collapse -->
   </div>
 </div>
-
 <div class="container-fluid">
     <div id="pricing-table" class="pricing-table">
-        <ul class="plan" ng-repeat="rasp in raspberry">
+        <ul class="plan" ng-repeat="rasp in raspberry | filter:query">
           <div class="plan-name-normal">
             <h4>{{rasp.id}}
-              <a uib-popover="MAC address : {{rasp.mac}} & IP address : {{rasp.ip}}" popover-title="{{dynamicPopover.title}}" popover-trigger="mouseenter" popover-placement="bottom">
+              <a uib-popover="MAC address : {{rasp.address.mac}} & IP address : {{rasp.address.ip}}" popover-title="{{dynamicPopover.title}}" popover-trigger="mouseenter" popover-placement="bottom">
                 <span class="glyphicon glyphicon-info-sign custom-info-sign" ></span>
               </a>
             </h4>
             <span>Stack {{rasp.position.stack}} / {{rasp.position.level}}</span>
           </div>
           <ul class="padding-ul-tab">
-            <li class="plan-feature">{{rasp.power}}</li>
-            <li class="plan-feature">{{rasp.cpu}}</li>
-            <li class="plan-feature">{{rasp.Lping}}</li>
+            <li class="plan-feature">{{rasp.status.power}}</li>
+            <li class="plan-feature">{{rasp.status.cpu}}</li>
+            <li class="plan-feature">{{rasp.status.Lping}}</li>
             <li class="plan-feature"><a href="#" class="btn btn-success btn-login btn-plan-select"><i class="icon-white icon-ok"></i> Ping</a></li>
           </ul>
         </ul>        
     </div>
 </div>
+
+<!-- http://plnkr.co/edit/XklvXtc1AZpndjLvXrh8?p=preview -->
