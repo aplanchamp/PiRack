@@ -109,7 +109,21 @@ pirackControllers.controller('informationCtrl', ['$scope', '$http', function($sc
 }]);
 
 pirackControllers.controller('installCtrl', ['$scope', '$http', function($scope, $http) {
-    
+
+  var value = Math.floor((Math.random() * 100) + 1);   
+  var type;
+
+  if (value < 100) {
+    type = 'info';
+  } else if (value == 100) {
+    type = 'success';
+  } else {
+    type = 'danger';
+  }
+
+  $scope.dynamic = value;
+  $scope.type = type;
+
 
 }]);
 

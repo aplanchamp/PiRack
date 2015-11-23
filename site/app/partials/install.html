@@ -19,3 +19,40 @@
     </div><!--/.nav-collapse -->
   </div>
 </div>
+
+
+
+
+<div class="container-fluid">
+
+  <button class="btn btn-success btn-login">Launch installation</button>
+
+  <uib-progressbar class="progress-striped active prog-bar" value="dynamic" type="{{type}}">{{dynamic}}%</uib-progressbar>
+
+  <div class="box-content">
+    <table class="table table-bordered table-striped table-condensed">
+      <thead>
+        <tr>
+          <th>Stack</th>  
+          <th>Status</th>
+          <th class="text-right">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td class="center"><span class="label-success label label-default">Active</span></td>
+          <td class="center text-right">
+            <button type="button" class="btn btn-default">
+              <span class="glyphicon glyphicon-expand"></span> Start
+            </button>
+            <button type="button" class="btn btn-default">
+              <span class="glyphicon glyphicon-chevron-down"></span> Detail
+            </button>
+          </td>
+        </tr>
+      <tr>
+      </tbody>
+    </table>
+  </div> 
+</div>
