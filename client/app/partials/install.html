@@ -1,0 +1,78 @@
+<div class="navbar navbar-default navbar-static-top background-nav-bar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand menu-style" href="#/login">Log out</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav menu-style">
+        <li><a href="#/information">Manage</a></li>
+        <li class="active"><a href="#/install">Install</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right menu-style">
+        <li><a href="#about">About</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
+
+
+
+
+<div class="container-fluid">
+
+
+  <button class="btn btn-success btn-login">Launch installation</button>
+
+  <uib-progressbar class="progress-striped active prog-bar" value="dynamic" type="{{type}}">{{dynamic}}%</uib-progressbar>
+
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Stack</th>  
+          <th>Status</th>
+          <th class="text-right">Action</th>
+        </tr>
+      </thead>
+      <tbody ng-repeat="stack in stacks">
+        <tr>
+          <td>{{stack.idStack}}</td>
+          <td class="center"><span class="label-success label label-default">{{stack.statusStack}}</span></td>
+          <td class="center text-right">
+            <button type="button" class="btn btn-default">
+              <span class="glyphicon glyphicon-expand"></span> Start
+            </button>
+            <button type="button" class="btn btn-default" ng-click="showDetail()">
+              <span class="glyphicon glyphicon-chevron-down" ng-hide="detailStack"></span><span class="glyphicon glyphicon-chevron-up" ng-show="detailStack"></span> Detail
+            </button>
+          </td>
+        </tr>
+        <tr ng-repeat="rasp in raspberry" ng-show="detailStack"><td style="width:33%;" ng-repeat="tmp in rasp">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Id</th>          
+              <th>Stack</th>  
+              <th>Level</th>
+              <th class="text-right">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{tmp.id}}</td>
+              <td class="center">{{rasp.position.stack}}</td>
+              <td class="center">{{tmp.position.level}}</td>
+              <td class="center"><span class="label-success label label-default">Active</span></td>          
+            </tr>
+          </tbody>
+        </table> 
+        </tr></td>                 
+      </tbody>
+    </table>
+  </div> 
+</div>

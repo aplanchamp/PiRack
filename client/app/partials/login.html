@@ -1,0 +1,32 @@
+<div class="container-fluid login-background">  
+  <div class="modal-dialog">
+    <div class="modal-content">    
+      <div class="modal-header">
+        <img class="img-responsive img-rounded center-block" ng-src="{{ImageUrl}}" height="200" width="200">
+          <h1 class="text-center">Control your Pirack</h1>
+      </div>
+      <div class="modal-body">
+        <form class="form col-md-12 center-block">
+          <div class="form-group">
+            <input type="text" class="form-control input-lg input-login" placeholder="Username" ng-model="model.username">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control input-lg input-login" placeholder="Password" ng-model="model.password">
+          </div>
+          <div class="form-group">
+            <button class="btn btn-success btn-login btn-lg btn-block" ng-click="login()">Login</button>
+          </div>
+          <strong><div class="text-danger text-center" ng-show="invalide">Incorrect data, please try again</div></>
+        </form>          
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div> 
+  </div>
+</div>
+
+
+
+<!-- http://www.bootstrapzero.com/ -->
+<!-- http://www.w3schools.com/bootstrap/bootstrap_buttons.asp -->
+<!-- http://stylescss.free.fr/couleurs.php -->
