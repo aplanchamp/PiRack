@@ -26,12 +26,12 @@
     </div><!--/.nav-collapse -->
   </div>
 </div>
-<div class="container-fluid">
+<div class="container-fluid information-margin">
     <div id="pricing-table" class="pricing-table">
         <ul class="plan" ng-repeat="rasp in raspberry | filter:query">
           <div class="plan-name-normal">
             <h4>{{rasp.id}}
-              <a uib-popover="MAC address : {{rasp.address.mac}} & IP address : {{rasp.address.ip}}" popover-title="{{dynamicPopover.title}}" popover-trigger="mouseenter" popover-placement="bottom">
+              <a ng-click="getRaspId(rasp.id)" uib-popover-html='dynamicPopover.content' popover-title="{{dynamicPopover.title}}" popover-placement="bottom" >
                 <span class="glyphicon glyphicon-info-sign custom-info-sign" ></span>
               </a>
             </h4>

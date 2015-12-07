@@ -39,15 +39,15 @@
           <th class="text-right">Action</th>
         </tr>
       </thead>
-      <tbody ng-repeat="stack in stacks">
-        <tr>
+      <tbody>
+        <tr ng-repeat="stack in stacks">
           <td>{{stack.idStack}}</td>
           <td class="center"><span class="label-success label label-default">{{stack.statusStack}}</span></td>
           <td class="center text-right">
             <button type="button" class="btn btn-default">
               <span class="glyphicon glyphicon-expand"></span> Start
             </button>
-            <button type="button" class="btn btn-default" ng-click="showDetail()">
+            <button type="button" class="btn btn-default" ng-click="showDetail(stack.idStack)">
               <span class="glyphicon glyphicon-chevron-down" ng-hide="detailStack"></span><span class="glyphicon glyphicon-chevron-up" ng-show="detailStack"></span> Detail
             </button>
           </td>
@@ -65,7 +65,7 @@
           <tbody>
             <tr>
               <td>{{tmp.id}}</td>
-              <td class="center">{{rasp.position.stack}}</td>
+              <td class="center">{{tmp.position.stack}}</td>
               <td class="center">{{tmp.position.level}}</td>
               <td class="center"><span class="label-success label label-default">Active</span></td>          
             </tr>
@@ -76,3 +76,12 @@
     </table>
   </div> 
 </div>
+
+
+<!-- Lancer une stack, attendre la réponse, afficher, lancer la stack suivante -->
+
+<!-- Dans la page manage, afficher les PI par stack -->
+
+<!-- faire une page unique pour le rasp maître -->
+
+<!-- revoir popover -->
