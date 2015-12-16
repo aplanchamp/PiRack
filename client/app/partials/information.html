@@ -12,11 +12,15 @@
       <ul class="nav navbar-nav menu-style">
         <li class="active"><a href="#/information">Manage</a></li>
         <li><a href="#/install">Install</a></li>
+        <li><a href="#/master">Master</a></li>
         <li>
-          <p class="custom-search-bar">Search Any: <input ng-model="query.$">
-            ID: <input ng-model="query.id"></label>
-            MAC: <input ng-model="query.address.mac">
-            IP: <input ng-model="query.address.ip">
+          <p class="custom-search-bar">Search: <input ng-model="query[queryBy]">
+          <select ng-model="queryBy">
+            <option value="$"></option>
+            <option value="id">ID</option>
+            <option value="mac">Addresse mac</option>
+            <option value="ip">Addresse ip</option>
+          </select>
           </p>
         </li>
       </ul>

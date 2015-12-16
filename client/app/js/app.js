@@ -33,17 +33,6 @@ pirackApp.config(function(RestangularProvider) {
      }
      return extractedData;
    });
-//  RestangularProvider.setResponseExtractor(function(data, operation) {
-//    var newResponse
-// console.log(data);
-//     if (operation === 'getList') {
-//         newResponse = data.rasps;
-//         console.log(newResponse);
-//     }else{
-//         newResponse = data;
-//     }
-//     return newResponse;
-// });
 
  });
 
@@ -66,10 +55,10 @@ pirackApp.config(['$routeProvider',
         templateUrl: 'partials/about.html',
         controller: 'aboutCtrl'
       }).
-      // when('/myModal', {
-      //   templateUrl: 'partials/modal.html',
-      //   controller: 'modalCtrl'
-      // }).
+      when('/master', {
+        templateUrl: 'partials/master.html',
+        controller: 'masterCtrl'
+      }).
       otherwise({
         redirectTo: '/login'
       });

@@ -28,11 +28,21 @@ pirackControllers.controller('informationCtrl', ['$scope', '$http', 'Restangular
   $scope.query = {}
   $scope.queryBy = '$';
 
+  $scope.stacks{
+    {
+        'id':'1'
+        'status':'on'
+    },
+    {
+        'id':'2'
+        'status':'off'
+    }  
+  }
+
   var rasps = Restangular.all('rasps');
 
   rasps.getList().then(function(data){
     $scope.raspberry = data;
-    console.log(data);
   });
 
 
@@ -41,42 +51,11 @@ pirackControllers.controller('informationCtrl', ['$scope', '$http', 'Restangular
       if ($scope.raspberry[n].id == raspId)
         levelArray = n;
     }
-    console.log(levelArray);
     $scope.dynamicPopover = {
       title: 'Additional information',
-      content: $sce.trustAsHtml('<li> Mac Adress : ' + $scope.raspberry[levelArray].address.mac + '</li><br><li>' + 'IP Adress : ' + $scope.raspberry[levelArray].address.ip + '</li>')
+      content: $sce.trustAsHtml('<li> Mac Adress : ' + $scope.raspberry[levelArray].mac + '</li><br><li>' + 'IP Adress : ' + $scope.raspberry[levelArray].ip + '</li>')
     };
-    console.log("coucou");
-  }
-
-
-
-  newRasp =  {
-      'address':
-          {
-              'ip': '172.0.0.1',
-              'mac': '00:EF:4G:00:45:OP'
-          },
-      'status':
-          {
-              'cpu': 22,
-              'power': 'Salut'
-          },
-      'position':
-          {
-              'stack': 2,
-              'level': 4
-          }
-  };
-
-  rasps.post(newRasp).then(function(newRasp) {
-    console.log(newRasp.get());
-  }, function error(reason) {
-    // An error has occurred
-  });
-
-
-  
+  }  
 
 }]);
 
@@ -291,6 +270,10 @@ pirackControllers.controller('installCtrl', ['$scope', '$http', function($scope,
 
 
   };
+
+}]);
+
+pirackControllers.controller('masterCtrl', ['$scope', '$http', function($scope, $http) {
 
 }]);
 
