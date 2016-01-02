@@ -31,24 +31,26 @@
   </div>
 </div>
 <div class="container-fluid information-margin">
+  <div ng-repeat="myStack in stacks">
     <div id="pricing-table" class="pricing-table">
-        <ul class="plan" ng-repeat="rasp in raspberry | filter:query">
+        <ul class="plan" ng-repeat="rasp in raspberry | filter:{stack:myStack.id} | filter:query">
           <div class="plan-name-normal">
             <h4>{{rasp.id}}
               <a ng-click="getRaspId(rasp.id)" uib-popover-html='dynamicPopover.content' popover-title="{{dynamicPopover.title}}" popover-placement="bottom" >
                 <span class="glyphicon glyphicon-info-sign custom-info-sign" ></span>
               </a>
             </h4>
-            <span>Stack {{rasp.position.stack}} / {{rasp.position.level}}</span>
+            <span>Stack {{rasp.stack}} / {{rasp.level}}</span>
           </div>
           <ul class="padding-ul-tab">
-            <li class="plan-feature">{{rasp.status.power}}</li>
-            <li class="plan-feature">{{rasp.status.cpu}}</li>
-            <li class="plan-feature">{{rasp.status.Lping}}</li>
+            <li class="plan-feature">{{rasp.power}}</li>
+            <li class="plan-feature">{{rasp.cpu}}</li>
+            <li class="plan-feature">{{rasp.Lping}}</li>
             <li class="plan-feature"><a href="#" class="btn btn-success btn-login btn-plan-select"><i class="icon-white icon-ok"></i> Ping</a></li>
           </ul>
         </ul>        
     </div>
+  </div>
 </div>
 
 <!-- http://plnkr.co/edit/XklvXtc1AZpndjLvXrh8?p=preview -->

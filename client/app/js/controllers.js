@@ -22,28 +22,52 @@ pirackControllers.controller('LoginCtrl', ['$scope', '$http', function($scope, $
 }]);
 
 
-pirackControllers.controller('informationCtrl', ['$scope', '$http', 'Restangular', '$sce', function($scope, $http, Restangular, $sce) {
+pirackControllers.controller('informationCtrl', ['$scope', '$http', '$sce', 'Restangular', function($scope, $http, $sce, Restangular) {
 
 
   $scope.query = {}
   $scope.queryBy = '$';
 
-  $scope.stacks{
-    {
-        'id':'1'
-        'status':'on'
-    },
-    {
-        'id':'2'
-        'status':'off'
-    }  
-  }
+  // $scope.stacks{
+  //   {
+  //       'id':'1'
+  //       'status':'on'
+  //   },
+  //   {
+  //       'id':'2'
+  //       'status':'off'
+  //   }  
+  // }
+
+
 
   var rasps = Restangular.all('rasps');
-
+  //var raspOptions = Restangular.all('rasps/options');
   rasps.getList().then(function(data){
     $scope.raspberry = data;
   });
+  // raspOptions.getList().then(function(data){
+  //   $scope.raspOptions = data;
+  // });
+
+  //console.log($scope.raspOptions);
+
+$scope.stacks = [
+    {
+        'id': 1,
+        'rid': [1,3],
+        'power': 'On',
+        'x': '2',
+        'y': '2'
+    },
+   {
+        'id': 2,
+        'rid': [2],
+        'power': 'Off',
+        'x': '2',
+        'y': '2'
+    }
+]
 
 
   $scope.getRaspId = function(raspId){
