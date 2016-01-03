@@ -24,14 +24,50 @@
           </p>
         </li>
       </ul>
+
       <ul class="nav navbar-nav navbar-right menu-style">
+        <li><p>
+          <div class="btn-group" uib-dropdown dropdown-append-to-body>
+            <button id="btn-append-to-body" type="submit" class="btn btn-success btn-login btn-plan-select" uib-dropdown-toggle>
+              Action
+            </button>
+            <button class="btn btn-success btn-login btn-plan-select" uib-dropdown-toggle>
+              <span class="caret"></span>
+            </button>
+            <ul class="uib-dropdown-menu">
+              <li ng-repeat="action in actions" class="custom-list-actions">
+                <a ng-click="submitAction(action)">{{action}}</a>
+              </li>
+            </ul>
+          </div>   
+        </p></li>          
         <li><a href="#about">About</a></li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
 </div>
 <div class="container-fluid information-margin">
-  <div ng-repeat="myStack in stacks">
+  <div class="row"> 
+  <div ng-repeat="myStack in stacks" class="col-xs-6 col-md-4">
+    <div class="page-header">
+        <h4>Stack {{myStack.id}}
+          <small>
+            <div class="btn-group custom-button-drop" uib-dropdown dropdown-append-to-body>
+              <button id="btn-append-to-body" type="submit" class="btn btn-success btn-login btn-plan-select" uib-dropdown-toggle>
+                Action
+              </button>
+              <button class="btn btn-success btn-login btn-plan-select" uib-dropdown-toggle>
+                <span class="caret"></span>
+              </button>
+              <ul class="uib-dropdown-menu">
+                <li ng-repeat="action in actions" class="custom-list-actions">
+                  <a ng-click="submitAction(action)">{{action}}</a>
+                </li>
+              </ul>
+            </div>  
+          </small>
+        </h4>
+    </div>     
     <div id="pricing-table" class="pricing-table">
         <ul class="plan" ng-repeat="rasp in raspberry | filter:{stack:myStack.id} | filter:query">
           <div class="plan-name-normal">
@@ -46,11 +82,27 @@
             <li class="plan-feature">{{rasp.power}}</li>
             <li class="plan-feature">{{rasp.cpu}}</li>
             <li class="plan-feature">{{rasp.Lping}}</li>
-            <li class="plan-feature"><a href="#" class="btn btn-success btn-login btn-plan-select"><i class="icon-white icon-ok"></i> Ping</a></li>
+            <li class="plan-feature"><!-- <a href="#" class="btn btn-success btn-login btn-plan-select"><i class="icon-white icon-ok"></i> Ping</a></li> -->
+              <div class="btn-group" uib-dropdown dropdown-append-to-body>
+                <button id="btn-append-to-body" type="submit" class="btn btn-success btn-login btn-plan-select" uib-dropdown-toggle>
+                  Action
+                </button>
+                <button class="btn btn-success btn-login btn-plan-select" uib-dropdown-toggle>
+                  <span class="caret"></span>
+                </button>
+                <ul class="uib-dropdown-menu">
+                  <li ng-repeat="action in actions" class="custom-list-actions">
+                    <a ng-click="submitAction(action)">{{action}}</a>
+                  </li>
+                </ul>
+              </div>  
+            </li>
           </ul>
         </ul>        
     </div>
   </div>
+  </div>
+
 </div>
 
 <!-- http://plnkr.co/edit/XklvXtc1AZpndjLvXrh8?p=preview -->

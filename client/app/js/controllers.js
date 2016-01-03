@@ -27,6 +27,7 @@ pirackControllers.controller('informationCtrl', ['$scope', '$http', '$sce', 'Res
 
   $scope.query = {}
   $scope.queryBy = '$';
+  $scope.selectedAction = "ping";
 
   // $scope.stacks{
   //   {
@@ -39,7 +40,19 @@ pirackControllers.controller('informationCtrl', ['$scope', '$http', '$sce', 'Res
   //   }  
   // }
 
+  $scope.actions = [
+    'ping',
+    'reboot',
+    'shutdown'
+  ];
 
+  $scope.setAction = function(action) {
+    $scope.selectedAction = action;
+  };
+
+  $scope.submitAction = function(action) {
+      console.log(action);
+  };
 
   var rasps = Restangular.all('rasps');
   //var raspOptions = Restangular.all('rasps/options');
@@ -55,18 +68,25 @@ pirackControllers.controller('informationCtrl', ['$scope', '$http', '$sce', 'Res
 $scope.stacks = [
     {
         'id': 1,
-        'rid': [1,3],
+        'rid': [1,3,7,9,13,14],
         'power': 'On',
         'x': '2',
         'y': '2'
     },
    {
         'id': 2,
-        'rid': [2],
+        'rid': [2, 12, 10, 6,15,16],
         'power': 'Off',
         'x': '2',
         'y': '2'
-    }
+    },
+   {
+        'id': 3,
+        'rid': [4, 5, 11, 8,17,18],
+        'power': 'Off',
+        'x': '2',
+        'y': '2'
+    }    
 ]
 
 

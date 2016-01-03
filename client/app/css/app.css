@@ -67,6 +67,14 @@ body,html {
   cursor: pointer;
 }
 
+.custom-list-actions {
+    cursor: pointer;
+}
+
+.custom-button-drop{
+  float: right;
+}
+
 .menu-style li a, .menu-style{
   color: #2E8B57 !important;
   font-weight: bold;
