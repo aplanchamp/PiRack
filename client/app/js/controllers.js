@@ -119,202 +119,31 @@ pirackControllers.controller('installCtrl', ['$scope', '$http', function($scope,
   $scope.dynamic = value;
   $scope.type = type;
 
-  $scope.detailStack = null;
-
-
   $scope.stacks = [
-
-  {
-    'idStack': '1',
-    'statusStack': 'ok',
-    'rasp': [
-
-  {
-    'id': '1',
-    'address': {
-        'ip': '172.0.0.1',
-        'mac': '00:EF:4G:00:45:AA'
-    },
-    'status': {
-        'cpu': '22',
+    {
+        'id': 1,
+        'rid': [1,3,7,9,13,14],
         'power': 'On',
-        'Lping': "24/65/2015 22h50"
+        'x': '2',
+        'y': '2'
     },
-    'position': {
-        'stack': '2',
-        'level': '4'
-     },
-     'uri': ''
-  },
-  {
-    'id': '2',
-    'address': {
-        'ip': '172.0.0.1',
-        'mac': '00:EF:4G:00:45:BB'
+   {
+        'id': 2,
+        'rid': [2, 12, 10, 6,15,16],
+        'power': 'Off',
+        'x': '2',
+        'y': '2'
     },
-    'status': {
-        'cpu': '22',
-        'power': 'On',
-        'Lping': "24/65/2015 22h50"
-    },
-    'position': {
-        'stack': '2',
-        'level': '4'
-     },
-     'uri': ''
-  },
-  {
-    'id': '3',
-    'address': {
-        'ip': '172.0.0.1',
-        'mac': '00:EF:4G:00:45:CC'
-    },
-    'status': {
-        'cpu': '22',
-        'power': 'On',
-        'Lping': "24/65/2015 22h50"
-    },
-    'position': {
-        'stack': '2',
-        'level': '4'
-     },
-     'uri': ''
-  },
-  {
-    'id': '4',
-    'address': {
-        'ip': '172.0.0.1',
-        'mac': '00:EF:4G:00:45:DD'
-    },
-    'status': {
-        'cpu': '22',
-        'power': 'On',
-        'Lping': "24/65/2015 22h50"
-    },
-    'position': {
-        'stack': '2',
-        'level': '4'
-     },
-     'uri': ''
-  }]
-  },
-  {
-    'idStack': '2',
-    'statusStack': 'off',
-    'rasp': [
+   {
+        'id': 3,
+        'rid': [4, 5, 11, 8,17,18],
+        'power': 'Off',
+        'x': '2',
+        'y': '2'
+    }    
+]
 
-  {
-    'id': '5',
-    'address': {
-        'ip': '172.0.0.1',
-        'mac': '00:EF:4G:00:45:AA'
-    },
-    'status': {
-        'cpu': '22',
-        'power': 'On',
-        'Lping': "24/65/2015 22h50"
-    },
-    'position': {
-        'stack': '2',
-        'level': '4'
-     },
-     'uri': ''
-  },
-  {
-    'id': '6',
-    'address': {
-        'ip': '172.0.0.1',
-        'mac': '00:EF:4G:00:45:BB'
-    },
-    'status': {
-        'cpu': '22',
-        'power': 'On',
-        'Lping': "24/65/2015 22h50"
-    },
-    'position': {
-        'stack': '2',
-        'level': '4'
-     },
-     'uri': ''
-  },
-  {
-    'id': '7',
-    'address': {
-        'ip': '172.0.0.1',
-        'mac': '00:EF:4G:00:45:CC'
-    },
-    'status': {
-        'cpu': '22',
-        'power': 'On',
-        'Lping': "24/65/2015 22h50"
-    },
-    'position': {
-        'stack': '2',
-        'level': '4'
-     },
-     'uri': ''
-  },
-  {
-    'id': '8',
-    'address': {
-        'ip': '172.0.0.1',
-        'mac': '00:EF:4G:00:45:DD'
-    },
-    'status': {
-        'cpu': '22',
-        'power': 'On',
-        'Lping': "24/65/2015 22h50"
-    },
-    'position': {
-        'stack': '2',
-        'level': '4'
-     },
-     'uri': ''
-  }]
-  }
-
-  ];
-
-  $scope.showDetail = function(idStack) {
-
-    var levelArray;
-    //console.log(idStack);
-
-    if($scope.detailStack == null)
-      $scope.detailStack = true;
-    else
-      $scope.detailStack = null;
-
-    for(var n = 0; n < $scope.stacks.length; n++){
-          if ($scope.stacks[n].idStack == idStack)
-            levelArray = n;
-    }
-      //console.log(levelArray);
-
-      console.log($scope.stacks[levelArray]);
-    var raspberry = $scope.stacks[levelArray].rasp;
-
-    var iteration = raspberry.length/3;
-      if (raspberry.length % 3 !== 0) {
-        iteration += 1;
-    }
-
-    var compiledRaspberry = [];
-    for (var i = 0 ; i < iteration; i++) {
-      if(i == iteration - 1) {
-        compiledRaspberry.push(raspberry);
-        
-      } else {
-        compiledRaspberry.push(raspberry.splice(0,3))
-        
-      }
-      
-      $scope.raspberry = compiledRaspberry;
-    }
-
-
-  };
-
+ 
 }]);
 
 pirackControllers.controller('masterCtrl', ['$scope', '$http', function($scope, $http) {

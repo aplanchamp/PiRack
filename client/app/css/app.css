@@ -38,6 +38,18 @@ body,html {
 }
 
 
+.custom-row-install {
+  text-align: center;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 10px;
+}
+
+.custom-row-install-header{
+    background-color: #2E8B57;
+    border-radius: 4px;
+    padding: 5px;
+}
 /*About page*/
 
 

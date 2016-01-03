@@ -15,74 +15,31 @@
         <li><a href="#/master">Master</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right menu-style">
+        <li><p>
+          <div class="btn-group">
+            <button class="btn btn-success btn-login btn-plan-select">
+              Launch installation
+            </button>
+          </div>   
+        </p></li>
         <li><a href="#about">About</a></li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
 </div>
 
-
-
-
 <div class="container-fluid">
-
-
-  <button class="btn btn-success btn-login">Launch installation</button>
-
   <uib-progressbar class="progress-striped active prog-bar" value="dynamic" type="{{type}}">{{dynamic}}%</uib-progressbar>
-
-  <div class="table-responsive">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Stack</th>  
-          <th>Status</th>
-          <th class="text-right">Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr ng-repeat="stack in stacks">
-          <td>{{stack.idStack}}</td>
-          <td class="center"><span class="label-success label label-default">{{stack.statusStack}}</span></td>
-          <td class="center text-right">
-            <button type="button" class="btn btn-default">
-              <span class="glyphicon glyphicon-expand"></span> Start
-            </button>
-            <button type="button" class="btn btn-default" ng-click="showDetail(stack.idStack)">
-              <span class="glyphicon glyphicon-chevron-down" ng-hide="detailStack"></span><span class="glyphicon glyphicon-chevron-up" ng-show="detailStack"></span> Detail
-            </button>
-          </td>
-        </tr>
-        <tr ng-repeat="rasp in raspberry" ng-show="detailStack"><td style="width:33%;" ng-repeat="tmp in rasp">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th>Id</th>          
-              <th>Stack</th>  
-              <th>Level</th>
-              <th class="text-right">Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>{{tmp.id}}</td>
-              <td class="center">{{tmp.position.stack}}</td>
-              <td class="center">{{tmp.position.level}}</td>
-              <td class="center"><span class="label-success label label-default">Active</span></td>          
-            </tr>
-          </tbody>
-        </table> 
-        </tr></td>                 
-      </tbody>
-    </table>
-  </div> 
+  <div class="row custom-row-install custom-row-install-header">
+    <div class="col-md-4">ID Stack</div>
+    <div class="col-md-4">IDs raspberrys in stack</div>
+    <div class="col-md-4">Status</div>
+  </div>
+  <div ng-repeat="myStack in stacks">
+    <div class="row custom-row-install">
+      <div class="col-md-4">{{myStack.id}}</div>
+      <div class="col-md-4">{{myStack.rid}}</div>
+      <div class="col-md-4"><span class="label-danger label label-default">fucks</span></div>
+    </div>
+  </div>
 </div>
-
-
-<!-- Lancer une stack, attendre la réponse, afficher, lancer la stack suivante -->
-
-<!-- Dans la page manage, afficher les PI par stack -->
-
-<!-- faire une page unique pour le rasp maître -->
-
-<!-- revoir popover -->
