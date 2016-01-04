@@ -29,16 +29,18 @@
 </div>
 
 <div class="container-fluid">
-  <uib-progressbar class="progress-striped active prog-bar" value="dynamic" type="{{type}}">{{dynamic}}%</uib-progressbar>
   <div class="row custom-row-install custom-row-install-header">
     <div class="col-md-4">ID Stack</div>
-    <div class="col-md-4">IDs raspberrys in stack</div>
+    <div class="col-md-4">ID Raspberry</div>
     <div class="col-md-4">Status</div>
   </div>
-  <div ng-repeat="myStack in stacks">
-    <div class="row custom-row-install">
-      <div class="col-md-4">{{myStack.id}}</div>
-      <div class="col-md-4">{{myStack.rid}}</div>
+  <div ng-repeat="myStack in stacks" class="row custom-row-install">
+    <div class="col-md-4">{{myStack.id}}</div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4"><span class="label-danger label label-default">fucks</span></div>
+    <div ng-repeat="rasp in myStack.rid" class="row custom-row-install">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">{{rasp}}</div>
       <div class="col-md-4"><span class="label-danger label label-default">fucks</span></div>
     </div>
   </div>

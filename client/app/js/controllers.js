@@ -29,41 +29,32 @@ pirackControllers.controller('informationCtrl', ['$scope', '$http', '$sce', 'Res
   $scope.queryBy = '$';
   $scope.selectedAction = "ping";
 
-  // $scope.stacks{
-  //   {
-  //       'id':'1'
-  //       'status':'on'
-  //   },
-  //   {
-  //       'id':'2'
-  //       'status':'off'
-  //   }  
-  // }
+  Restangular.oneUrl('/rasps/options').get().then(function(response){
+    //Actions that we can achieve on rasps ressource
+    $scope.actions = response.actions;
+  });
 
-  $scope.actions = [
-    'ping',
-    'reboot',
-    'shutdown'
-  ];
-
-  $scope.setAction = function(action) {
-    $scope.selectedAction = action;
-  };
+  Restangular.oneUrl('/rasps').get().then(function(response){
+    //Actions that we can achieve on rasps ressource
+    $scope.raspberry = response.rasps;
+  }, function(response){
+    console.log("error");
+  });  
 
   $scope.submitAction = function(action) {
       console.log(action);
+          action_on_rasp = {
+            'ip':'coucou',
+            'Port':1026,
+            'action': action
+          }
+      Restangular.oneUrl('/rasps').post("execute",action_on_rasp).then(function(response){
+         console.log(response.status + " et " + response.data); 
+      },
+      function(response){
+         console.log(response.status + " et " + response.data);
+      });    
   };
-
-  var rasps = Restangular.all('rasps');
-  //var raspOptions = Restangular.all('rasps/options');
-  rasps.getList().then(function(data){
-    $scope.raspberry = data;
-  });
-  // raspOptions.getList().then(function(data){
-  //   $scope.raspOptions = data;
-  // });
-
-  //console.log($scope.raspOptions);
 
 $scope.stacks = [
     {
@@ -89,7 +80,6 @@ $scope.stacks = [
     }    
 ]
 
-
   $scope.getRaspId = function(raspId){
     for(var n = 0; n < $scope.raspberry.length; n++){
       if ($scope.raspberry[n].id == raspId)
@@ -104,20 +94,6 @@ $scope.stacks = [
 }]);
 
 pirackControllers.controller('installCtrl', ['$scope', '$http', function($scope, $http) {
-
-  var value = Math.floor((Math.random() * 100) + 1);   
-  var type;
-
-  if (value < 100) {
-    type = 'info';
-  } else if (value == 100) {
-    type = 'success';
-  } else {
-    type = 'danger';
-  }
-
-  $scope.dynamic = value;
-  $scope.type = type;
 
   $scope.stacks = [
     {

@@ -264,7 +264,7 @@ class UDPStream(object):
             logging.error('%s event error' % self)
 
 class RaspGetHandler(tornado.web.RequestHandler):
-    def get(self, id):
+    def get(self, rasp_id):
         self._status = 200
         rasp = [rasp for rasp in rasps if rasp['id'] == rasp_id]
         if len(rasp) == 0:
@@ -286,7 +286,6 @@ class RaspsOptionsHandler(tornado.web.RequestHandler):
 class RaspsGetHandler(tornado.web.RequestHandler):
     def set_default_headers(self):
         self.add_header('Access-Control-Allow-Origin', self.request.headers.get('Origin', '*'))
-        self.add_header('Access-Control-Request-Method', 'POST')
         self.add_header('Access-Control-Allow-Headers', 'X-Requested-With')
     def get(self):
         response = {'rasps': [rasp for rasp in rasps]}
@@ -309,15 +308,15 @@ class RaspsActionsHandler(tornado.web.RequestHandler):
         requestAction = self.request.body
         strRequestAction = requestAction.decode("utf-8")
         jsonRequestAction = json.loads(strRequestAction)
-        if jsonRequestAction["action"] == "Ping":
+        if jsonRequestAction["action"] == "ping":
             print(config['rasps']['Ping'])
             #Variable provisoire en attendant le mapping
-            hostname = "127.0.0.1"
+            hostname = "198.168.12.1"
             response = os.system( config['rasps']['Ping'] +' '+ hostname + "> /dev/null 2>&1")
             if response == 0:
                 date = datetime.datetime.now()
                 date = date.strftime('%d/%m/%Y')
-                self.respond("Last ping at " + date , 200)
+                self.respond(date , 200)
             else:
                 self.respond( hostname + "is down", 404)
         else:
