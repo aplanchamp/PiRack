@@ -46,7 +46,13 @@
     </div><!--/.nav-collapse -->
   </div>
 </div>
+
+
 <div class="container-fluid information-margin">
+  <div class="custom-error-action" ng-show="errorAction">
+    <h4><br>Raspberry n° 3 : {{textErrorAction}}</br></h4>  
+  </div>  
+
   <div class="row"> 
   <div ng-repeat="myStack in stacks" class="col-xs-6 col-md-4">
     <div class="page-header">

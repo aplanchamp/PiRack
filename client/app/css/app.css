@@ -50,6 +50,10 @@ body,html {
     border-radius: 4px;
     padding: 10px;
 }
+
+.width-progress-bar{
+  width:50%;
+}
 /*About page*/
 
 
@@ -61,7 +65,9 @@ body,html {
 
 /*Information page*/
 
-/* Search bar */
+.custom-error-action{
+  color: red;
+}
 
 .custom-search-bar {
   padding-top: 12px;
@@ -196,9 +202,4 @@ body,html {
 .btn-plan-select {
   font-size: 10px;
 }
-
-
-
-
-
 

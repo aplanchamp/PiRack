@@ -17,7 +17,7 @@
       <ul class="nav navbar-nav navbar-right menu-style">
         <li><p>
           <div class="btn-group">
-            <button class="btn btn-success btn-login btn-plan-select">
+            <button class="btn btn-success btn-login btn-plan-select" ng-click="openModal()">
               Launch installation
             </button>
           </div>   
@@ -28,20 +28,59 @@
   </div>
 </div>
 
-<div class="container-fluid">
-  <div class="row custom-row-install custom-row-install-header">
-    <div class="col-md-4">ID Stack</div>
-    <div class="col-md-4">ID Raspberry</div>
-    <div class="col-md-4">Status</div>
-  </div>
-  <div ng-repeat="myStack in stacks" class="row custom-row-install">
-    <div class="col-md-4">{{myStack.id}}</div>
-    <div class="col-md-4"></div>
-    <div class="col-md-4"><span class="label-danger label label-default">fucks</span></div>
-    <div ng-repeat="rasp in myStack.rid" class="row custom-row-install">
-      <div class="col-md-4"></div>
-      <div class="col-md-4">{{rasp}}</div>
-      <div class="col-md-4"><span class="label-danger label label-default">fucks</span></div>
-    </div>
-  </div>
+  <div class="center-block width-progress-bar" ng-show="progressBarShow">
+    <h3 class="text-center">Processing...</h3>
+
+  <uib-progressbar value="100" class="progress-striped active"></uib-progressbar>
+  </div>  
+
+<!-- modal -->
+<!-- look at 'type' and 'id' values -->
+<script type="text/ng-template" id="myTestModal.tmpl.html">
+   <div class="modal-header">
+      <h3>Launch Installation</h3>
+   </div>
+   <div class="modal-body">
+      <p>Are you sure you want to launch installation ? If you had previously launched the Pirack it will reset every Raspberry Pi</p>
+   </div>
+
+   <div class="modal-footer">
+      <button type="button" class="btn btn-default" ng-click="close()" data-dismiss="modal">Cancel
+      </button>
+      <button type="button" class="btn btn-primary" ng-click="installPirack()">Confirm
+      </button>
+   </div> 
+</script>
+
+
+
+  <div class="container-fluid">
+    <div class="modal-content about-custom-margin">    
+      <div class="modal-header">
+          <h1 class="text-center">Installation of Stacks</h1>
+      </div>
+      <div class="modal-body">
+        <div class="row custom-row-install custom-row-install-header">
+          <strong>
+          <div class="col-md-8">ID Stack</div>
+          <div class="col-md-4">Status</div>
+          </strong>
+        </div>
+        <div ng-repeat="myStack in stacks" class="row custom-row-install">
+          <div class="col-md-8">{{myStack.id}}</div>
+          <div class="col-md-4"><span class="label-success label label-default">Installation completed</span></div>
+       <!--    <div ng-repeat="rasp in myStack.rid" class="row custom-row-install">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">{{rasp}}</div>
+            <div class="col-md-4"><span class="label-danger label label-default">fucks</span></div>
+          </div> -->
+        </div>  
+        <div ng-show="messageFirstInstallation">
+          <p class="text-danger text-center">You must click the "launch installation" button to start working with the Pirack</p>     
+        </div>      
+      </div>
+      <div class="modal-footer">
+        <p class="small text-center">Go to the "Manage" page to check errors per raspberry pi</p>
+      </div>
+    </div> 
 </div>

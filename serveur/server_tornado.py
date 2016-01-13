@@ -311,7 +311,7 @@ class RaspsActionsHandler(tornado.web.RequestHandler):
         if jsonRequestAction["action"] == "ping":
             print(config['rasps']['Ping'])
             #Variable provisoire en attendant le mapping
-            hostname = "198.168.12.1"
+            hostname = "127.0.0.1"
             response = os.system( config['rasps']['Ping'] +' '+ hostname + "> /dev/null 2>&1")
             if response == 0:
                 date = datetime.datetime.now()
