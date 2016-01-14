@@ -163,7 +163,7 @@ pirackControllers.controller('installCtrl', ['$scope', '$http', '$uibModal', fun
         'id': 3,
         'rid': [4, 5, 11, 8,17,18],
         'power': 'Off',
-        'Sstatus': 'okWarning',
+        'Sstatus': 'warningStatus',
         'x': '2',
         'y': '2'
     }    
