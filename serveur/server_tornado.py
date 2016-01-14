@@ -22,6 +22,7 @@ rasps = [
         'cpu': '22',
         'Lping': '25/20/1992',
         'stack': '1',
+        'Rstatus': 'okStatus',
         'level': '4'
     },
     {
@@ -32,6 +33,7 @@ rasps = [
         'cpu': '46',
         'Lping': '25/20/1992',
         'stack': '2',
+        'Rstatus': 'okStatus',        
         'level': '5'
     },
     {
@@ -42,6 +44,7 @@ rasps = [
         'cpu': '99',
         'Lping': '25/20/1992',
         'stack': '1',
+        'Rstatus': 'koStatus', 
         'level': '6'
     },
     {
@@ -52,6 +55,7 @@ rasps = [
         'cpu': '97',
         'Lping': '25/20/1992',
         'stack': '3',
+        'Rstatus': 'koStatus', 
         'level': '6'
     },
     {
@@ -62,6 +66,7 @@ rasps = [
         'cpu': '92',
         'Lping': '25/20/1992',
         'stack': '3',
+        'Rstatus': 'warningStatus', 
         'level': '4'
     },
     {
@@ -72,6 +77,7 @@ rasps = [
         'cpu': '92',
         'Lping': '25/20/1992',
         'stack': '2',
+        'Rstatus': 'okStatus', 
         'level': '4'
     },
     {
@@ -82,6 +88,7 @@ rasps = [
         'cpu': '22',
         'Lping': '25/20/1992',
         'stack': '1',
+        'Rstatus': 'okStatus', 
         'level': '4'
     },
     {
@@ -92,6 +99,7 @@ rasps = [
         'cpu': '46',
         'Lping': '25/20/1992',
         'stack': '3',
+        'Rstatus': 'koStatus', 
         'level': '5'
     },
     {
@@ -102,6 +110,7 @@ rasps = [
         'cpu': '99',
         'Lping': '25/20/1992',
         'stack': '1',
+        'Rstatus': 'okStatus', 
         'level': '6'
     },
     {
@@ -112,6 +121,7 @@ rasps = [
         'cpu': '97',
         'Lping': '25/20/1992',
         'stack': '2',
+        'Rstatus': 'okStatus', 
         'level': '6'
     },
     {
@@ -122,6 +132,7 @@ rasps = [
         'cpu': '92',
         'Lping': '25/20/1992',
         'stack': '3',
+        'Rstatus': 'okStatus', 
         'level': '4'
     },
     {
@@ -132,6 +143,7 @@ rasps = [
         'cpu': '92',
         'Lping': '25/20/1992',
         'stack': '2',
+        'Rstatus': 'okStatus', 
         'level': '4'
     },
     {
@@ -141,7 +153,8 @@ rasps = [
         'power': 'On',
         'cpu': '22',
         'Lping': '25/20/1992',
-        'stack': '1',
+        'stack': '4',
+        'Rstatus': 'koStatus', 
         'level': '4'
     },
     {
@@ -151,7 +164,8 @@ rasps = [
         'power': 'Off',
         'cpu': '46',
         'Lping': '25/20/1992',
-        'stack': '1',
+        'stack': '4',
+        'Rstatus': 'okStatus', 
         'level': '5'
     },
     {
@@ -161,7 +175,8 @@ rasps = [
         'power': 'On',
         'cpu': '99',
         'Lping': '25/20/1992',
-        'stack': '2',
+        'stack': '4',
+        'Rstatus': 'okStatus', 
         'level': '6'
     },
     {
@@ -171,7 +186,8 @@ rasps = [
         'power': 'On',
         'cpu': '97',
         'Lping': '25/20/1992',
-        'stack': '2',
+        'stack': '4',
+        'Rstatus': 'okStatus', 
         'level': '6'
     },
     {
@@ -181,7 +197,8 @@ rasps = [
         'power': 'Off',
         'cpu': '92',
         'Lping': '25/20/1992',
-        'stack': '3',
+        'stack': '5',
+        'Rstatus': 'koStatus', 
         'level': '4'
     },
     {
@@ -191,7 +208,8 @@ rasps = [
         'power': 'Off',
         'cpu': '92',
         'Lping': '25/20/1992',
-        'stack': '3',
+        'stack': '5',
+        'Rstatus': 'okStatus', 
         'level': '4'
     }                                   
 ]

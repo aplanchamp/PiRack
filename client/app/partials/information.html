@@ -54,7 +54,7 @@
   </div>  
 
   <div class="row"> 
-  <div ng-repeat="myStack in stacks" class="col-xs-6 col-md-4">
+  <div ng-repeat="myStack in stacks" class="col-md-6">
     <div class="page-header">
         <h4>Stack {{myStack.id}}
           <small>
@@ -76,9 +76,9 @@
     </div>     
     <div id="pricing-table" class="pricing-table">
         <ul class="plan" ng-repeat="rasp in raspberry | filter:{stack:myStack.id} | filter:query">
-          <div class="plan-name-normal">
+          <div class="{{rasp.Rstatus}} plan-name-normal">
             <h4>{{rasp.id}}
-              <a ng-click="getRaspId(rasp.id)" uib-popover-html='dynamicPopover.content' popover-title="{{dynamicPopover.title}}" popover-placement="bottom" >
+              <a ng-click="getRaspId(rasp.id)" uib-popover-html='dynamicPopover.content' popover-title="{{dynamicPopover.title}}" popover-placement="bottom">
                 <span class="glyphicon glyphicon-info-sign custom-info-sign" ></span>
               </a>
             </h4>
@@ -112,3 +112,8 @@
 </div>
 
 <!-- http://plnkr.co/edit/XklvXtc1AZpndjLvXrh8?p=preview -->
+
+
+<!-- http://bootsnipp.com/snippets/featured/3d-buttons-effects -->
+<!-- http://stackoverflow.com/questions/26742620/bootstrap-3-responsive-rectangle-columns -->
+<!-- https://desandro.github.io/3dtransforms/docs/rectangular-prism.html -->

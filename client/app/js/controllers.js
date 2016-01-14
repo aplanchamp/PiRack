@@ -30,17 +30,26 @@ pirackControllers.controller('informationCtrl', ['$scope', '$http', '$sce', 'Res
   $scope.selectedAction = "ping";
   $scope.errorAction = false;
 
-  Restangular.oneUrl('/rasps/options').get().then(function(response){
-    //Actions that we can achieve on rasps ressource
-    $scope.actions = response.actions;
-  });
 
-  Restangular.oneUrl('/rasps').get().then(function(response){
-    //Actions that we can achieve on rasps ressource
-    $scope.raspberry = response.rasps;
-  }, function(response){
-    console.log("error");
-  });  
+
+  //$scope.myDynamicClass = 'plan-name-error';
+
+  $scope.getOptions = function() {
+    Restangular.oneUrl('/rasps/options').get().then(function(response){
+      //Actions that we can achieve on rasps ressource
+      $scope.actions = response.actions;
+    });
+  };
+
+
+  $scope.getRasps = function() {
+    Restangular.oneUrl('/rasps').get().then(function(response){
+      //Actions that we can achieve on rasps ressource
+      $scope.raspberry = response.rasps;
+    }, function(response){
+      $scope.textErrorAction = "A problem occured on the Network, the list of Raspberry Pis can not be fetched yet";
+    });  
+  };
 
   $scope.submitAction = function(action) {
           action_on_rasp = {
@@ -49,38 +58,58 @@ pirackControllers.controller('informationCtrl', ['$scope', '$http', '$sce', 'Res
             'action': action
           }
       Restangular.oneUrl('/rasps').post("execute",action_on_rasp).then(function(response){
-        console.log(response.status + " et " + response.data);  
+        $scope.getRasps(); 
+        $scope.$apply();
       },
       function(response){
           $scope.errorAction = true;
           $scope.textErrorAction = response.data;
-          console.log($scope.textErrorAction);
+          $scope.getRasps(); 
+          $scope.$apply();
       });    
   };
 
-$scope.stacks = [
-    {
-        'id': 1,
-        'rid': [1,3,7,9,13,14],
-        'power': 'On',
-        'x': '2',
-        'y': '2'
-    },
-   {
-        'id': 2,
-        'rid': [2, 12, 10, 6,15,16],
-        'power': 'Off',
-        'x': '2',
-        'y': '2'
-    },
-   {
-        'id': 3,
-        'rid': [4, 5, 11, 8,17,18],
-        'power': 'Off',
-        'x': '2',
-        'y': '2'
-    }    
-]
+  $scope.getOptions();
+  $scope.getRasps();
+
+  $scope.stacks = [
+      {
+          'id': 1,
+          'rid': [1,3,7,9],
+          'power': 'On',
+          'x': '2',
+          'y': '2'
+      },
+     {
+          'id': 2,
+          'rid': [2, 12, 10, 6],
+          'power': 'Off',
+          'x': '2',
+          'y': '2'
+      },
+     {
+          'id': 3,
+          'rid': [4, 5, 11, 8],
+          'power': 'Off',
+          'x': '2',
+          'y': '2'
+      },    
+     {
+          'id': 4,
+          'rid': [13, 14, 15, 16],
+          'power': 'Off',
+          'x': '2',
+          'y': '2'
+      },   
+     {
+          'id': 5,
+          'rid': [17, 18],
+          'power': 'Off',
+          'x': '2',
+          'y': '2'
+      }           
+
+  ]
 
   $scope.getRaspId = function(raspId){
     for(var n = 0; n < $scope.raspberry.length; n++){
@@ -102,35 +131,43 @@ pirackControllers.controller('installCtrl', ['$scope', '$http', '$uibModal', fun
   $scope.stacks = null;
 
   $scope.installPirack = function(){
-    console.log("coucou");
     $scope.progressBarShow = true;
     $scope.messageFirstInstallation = false;
     $scope.close();
   }  
 
-  // $scope.stacks = [
-  //   {
-  //       'id': 1,
-  //       'rid': [1,3,7,9,13,14],
-  //       'power': 'On',
-  //       'x': '2',
-  //       'y': '2'
-  //   },
-  //  {
-  //       'id': 2,
-  //       'rid': [2, 12, 10, 6,15,16],
-  //       'power': 'Off',
-  //       'x': '2',
-  //       'y': '2'
-  //   },
-  //  {
-  //       'id': 3,
-  //       'rid': [4, 5, 11, 8,17,18],
-  //       'power': 'Off',
-  //       'x': '2',
-  //       'y': '2'
-  //   }    
-//]
+  $scope.phase1 = function() {
+  };
+
+  $scope.phase2 = function() {
+  };    
+
+  $scope.stacks = [
+    {
+        'id': 1,
+        'rid': [1,3,7,9,13,14],
+        'power': 'On',
+        'Sstatus': 'okStatus',
+        'x': '2',
+        'y': '2'
+    },
+   {
+        'id': 2,
+        'rid': [2, 12, 10, 6,15,16],
+        'power': 'Off',
+        'Sstatus': 'koStatus',
+        'x': '2',
+        'y': '2'
+    },
+   {
+        'id': 3,
+        'rid': [4, 5, 11, 8,17,18],
+        'power': 'Off',
+        'Sstatus': 'okWarning',
+        'x': '2',
+        'y': '2'
+    }    
+]
 
   if($scope.stacks == null){
       $scope.messageFirstInstallation = true;
@@ -138,8 +175,8 @@ pirackControllers.controller('installCtrl', ['$scope', '$http', '$uibModal', fun
  
 $scope.openModal=function(){
     $scope.modalInstance=$uibModal.open({
-    templateUrl: 'myTestModal.tmpl.html',
-        scope:$scope
+      templateUrl: 'myTestModal.tmpl.html',
+      scope:$scope
     });
 }
 

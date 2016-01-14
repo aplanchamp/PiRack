@@ -65,6 +65,9 @@ body,html {
 
 /*Information page*/
 
+
+
+
 .custom-error-action{
   color: red;
 }
@@ -137,12 +140,22 @@ body,html {
   
 .plan-name-normal {
   padding: 5px;
-  background-color: #2E8B57;
   -moz-border-radius: 5px 5px 0 0;
   -webkit-border-radius: 5px 5px 0 0;
   border-radius: 5px 5px 0 0;
  }
 
+ .okStatus{
+  background-color: #2E8B57;
+}
+
+ .koStatus{
+  background-color: #B22222;
+}
+
+ .warningStatus{
+  background-color: #DAA520;
+}
  .pricing-table {
   text-align: center;
  }
@@ -153,14 +166,7 @@ body,html {
     vertical-align: top;
  }
   
-.plan-name-error {
-  padding: 5px;
-  color: #fff;
-  background-color: #FF0000;
-  -moz-border-radius: 5px 5px 0 0;
-  -webkit-border-radius: 5px 5px 0 0;
-  border-radius: 5px 5px 0 0;
- }
+
   
 .pricing-table .plan .plan-name span {
   font-size: 20px;
