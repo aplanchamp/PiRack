@@ -190,7 +190,63 @@ pirackControllers.controller('informationCtrl', ['$scope', '$http', '$sce', '$fi
           'Sstatus': 'warningStatus',
           'x': '2',
           'y': '1'
-      }           
+      },
+    {
+          'id': 6,
+          'rid': [1,3,7,9],
+          'power': 'On',
+          'Sstatus': 'okStatus', 
+          'x': '2',
+          'y': '2'
+      },
+     {
+          'id': 7,
+          'rid': [2, 12, 10, 6],
+          'power': 'Off',
+          'Sstatus': 'okStatus',
+          'x': '2',
+          'y': '3'
+      },
+     {
+          'id': 8,
+          'rid': [4, 5, 11, 8],
+          'power': 'Off',
+          'Sstatus': 'koStatus',
+          'x': '2',
+          'y': '4'
+      },    
+     {
+          'id': 9,
+          'rid': [13, 14, 15, 16],
+          'power': 'Off',
+          'Sstatus': 'warningStatus',
+          'x': '3',
+          'y': '1'
+      },   
+     {
+          'id': 10,
+          'rid': [17, 18],
+          'power': 'Off',
+          'Sstatus': 'warningStatus',
+          'x': '3',
+          'y': '2'
+      },
+    {
+          'id': 11,
+          'rid': [13, 14, 15, 16],
+          'power': 'Off',
+          'Sstatus': 'warningStatus',
+          'x': '3',
+          'y': '3'
+      },   
+     {
+          'id': 12,
+          'rid': [17, 18],
+          'power': 'Off',
+          'Sstatus': 'warningStatus',
+          'x': '3',
+          'y': '4'
+      }                                          
 
   ]
 

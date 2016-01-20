@@ -237,8 +237,7 @@ body,html {
     outline:medium none;
     -moz-outline-style:none;
     border:0px;
-    margin-right:10px;
-    margin-top:15px;
+    padding: 20px;
 }
 .btn3d:focus {
     outline:medium none;
@@ -258,4 +257,15 @@ body,html {
 .koStatusbtn3 {
     box-shadow:0 0 0 1px #c63702 inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #C24032, 0 8px 0 1px rgba(0,0,0,0.4), 0 8px 8px 1px rgba(0,0,0,0.5);
     background-color:#c63702;
+}
+
+/*.coucou {
+  position: absolute;
+} */
+
+.button-fix-size {
+  display: block;            
+  width: 80%;
+  margin: 15px !important;
+  text-align: center;
 }
