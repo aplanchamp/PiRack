@@ -22,5 +22,22 @@
 </div>
 
 <div class="container-fluid">
-Hello, this is the master's administration page yet to be done !
+    <div class="modal-content about-custom-margin">    
+      <div class="modal-header {{master.Rstatus}}">
+          <h1 class="text-center">MASTER</h1>
+      </div>
+      <div class="modal-body">
+          <ul>
+            <li>Power :  {{master.power}} 
+            <li>Mac Address :  {{master.mac}}
+            <li>IP Address :  {{master.ip}}
+            <li>CPU Load :  {{master.cpu}}
+            <li>Last time it was pinged :  {{master.Lping}}
+             
+          </ul>
+        </div>
+      <div class="modal-footer">
+        <p class="small text-center">S9 Project - ENSEIRB MATMECA - The Master Pi </p>
+      </div>
+    </div> 
 </div>

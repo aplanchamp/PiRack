@@ -75,6 +75,7 @@ body,html {
 .custom-search-bar {
   padding-top: 12px;
   font-weight: normal;
+  margin-left: 15px;
 }
 
 .information-margin{
@@ -146,15 +147,15 @@ body,html {
  }
 
  .okStatus{
-  background-color: #2E8B57;
+  background-color: #2E8B57 !important;
 }
 
  .koStatus{
-  background-color: #B22222;
+  background-color: #c63702 !important;
 }
 
  .warningStatus{
-  background-color: #DAA520;
+  background-color: #f0ad4e !important;
 }
  .pricing-table {
   text-align: center;
@@ -209,3 +210,52 @@ body,html {
   font-size: 10px;
 }
 
+
+/* 2D mode view */
+
+.center-table
+{
+  margin: 0 auto !important;
+  float: none !important;
+}
+
+.custom-view-table{
+  padding: 20px;
+  margin-bottom: 20px !important;
+}
+
+
+
+.custom-switch-button{
+  margin-right: 5px;
+  margin-left: 15px !important;
+}
+
+.btn3d {
+    transition:all .08s linear;
+    position:relative;
+    outline:medium none;
+    -moz-outline-style:none;
+    border:0px;
+    margin-right:10px;
+    margin-top:15px;
+}
+.btn3d:focus {
+    outline:medium none;
+    -moz-outline-style:none;
+}
+.btn3d:active {
+    top:9px;
+}
+.okStatusbtn3{
+    box-shadow:0 0 0 1px #5cb85c inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #2E8B57, 0 8px 0 1px rgba(0,0,0,0.4), 0 8px 8px 1px rgba(0,0,0,0.5);
+    background-color:#2E8B57;
+}
+.warningStatusbtn3 {
+    box-shadow:0 0 0 1px #f0ad4e inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #eea236, 0 8px 0 1px rgba(0,0,0,0.4), 0 8px 8px 1px rgba(0,0,0,0.5);
+    background-color:#f0ad4e;
+}
+.koStatusbtn3 {
+    box-shadow:0 0 0 1px #c63702 inset, 0 0 0 2px rgba(255,255,255,0.15) inset, 0 8px 0 0 #C24032, 0 8px 0 1px rgba(0,0,0,0.4), 0 8px 8px 1px rgba(0,0,0,0.5);
+    background-color:#c63702;
+}
