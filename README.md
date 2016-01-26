@@ -6,8 +6,8 @@ The code of the project is divided in 3 parts : client, server and slaves.
 
 The client files implement a website to control the Pirack remotely and easily (Pirack/master/client). 
 The server files implement the Web Server and the Control Server installed on the Master raspberry pi (Pirack/master/server) :
-it communicates with the client (Website)
-it controls the 48 other slaves (raspberry pis)
+- it communicates with the client (Website)
+- it controls the 48 other slaves (raspberry pis)
 
 The slave files implement the behaviour of the slave raspberry pis regarding the request coming from the master (the slaves are in a listening mode, waiting for a request from the Master).
 
