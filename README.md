@@ -29,9 +29,7 @@ Fetch the code from the repository on your computer.
 The Web Client files are not currently installed on the Master Raspberry (see the TODO List), so to launch the Web Client, you must do it on your own machine (not connect on the master Raspberry using ssh)
 To launch the client Web, you must install node js using the command npm install.
 
-Go to the following directory (you have fetched the client files of the git repository on your own computer) : 
-- Pirack/master/client
-type the following command :
+Go to the following directory (you have fetched the client files of the git repository on your own computer) Pirack/master/client and type the following command :
 - npm start
 When it is done, you should have the following message :
 Starting up http-server, serving ./ on port: 8000
