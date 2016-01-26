@@ -14,13 +14,13 @@ The slave files implement the behaviour of the slave raspberry pis regarding the
 The installation of the right OS and dependencies on the Master and Slave Raspberry Pis is explained on the piRack-InstallationOfRasbian.pdf file. Once you have gone through these instructions, you have to add some dependencies :
 
 Master dependencies to install:
-pip3 : https://pip.pypa.io/en/stable/installing/
-pip3 install subprocess
-pip3 install sh
-pip3 install csv
-pip3 install tornado
-python3
-pip3 install nginx
+- pip3 : https://pip.pypa.io/en/stable/installing/
+- pip3 install subprocess
+- pip3 install sh
+- pip3 install csv
+- pip3 install tornado
+- python3
+- pip3 install nginx
 
 For now, this code has only been tested using 2 Raspberry Pis and 1 master Raspberry Pi  with the following configuration: 2 raspberry pis gathered in a stack controlled by the master.
 
@@ -30,15 +30,15 @@ The Web Client files are not currently installed on the Master Raspberry (see th
 To launch the client Web, you must install node js using the command npm install.
 
 Go to the following directory (you have fetched the client files of the git repository on your own computer) : 
-Pirack/master/client
+- Pirack/master/client
 type the following command :
-npm start
+- npm start
 When it is done, you should have the following message :
 Starting up http-server, serving ./ on port: 8000
 Hit CTRL-C to stop the server
 
 To connect to the master, use the following SSH command:
-ssh pi@192.168.23.11 (master ip address set directly on the cmdline.txt file in the SD card).
+- ssh pi@192.168.23.11 (master ip address set directly on the cmdline.txt file in the SD card).
 The password is “raspberry”.
 Copy in the master the directory Pirack/master/server
 
@@ -46,23 +46,23 @@ The first thing to do is to visualize geographically the structure you want for 
 
 To start the Server:
 Go to the following directory : Pirack/master/server
-Type the following command: python3 server.py 
+- Type the following command: python3 server.py 
 
-Once the server and the client are started, go to your browser and connect to the website with the following URL : http://localhost:8000/app/
+Once the server and the client are started, go to your browser and connect to the website with the following URL : - http://localhost:8000/app/
 
 Now that you have login you are redirected to the manage page, go to the install page 
-Make sure all the stacks are powered off
-Click on the button “launch installation”
-The relay module is disabled at first. All stacks are powering down (simulation)
-The first switch of the relay module is on (1 stack is powering on). You need to plug manually your first stack
-Follow the LED relay module: if a relay power on/off, manually power on/off the corresponding stack.
-At the end of the installation, all stacks must be plugged and Raspberry Pis must have asked for their fixed IP addresses to the DHCP server.
+- Make sure all the stacks are powered off
+- Click on the button “launch installation”
+- The relay module is disabled at first. All stacks are powering down (simulation)
+-The first switch of the relay module is on (1 stack is powering on). You need to plug manually your first stack
+- Follow the LED relay module: if a relay power on/off, manually power on/off the corresponding stack.
+- At the end of the installation, all stacks must be plugged and Raspberry Pis must have asked for their fixed IP addresses to the DHCP server.
 Once the installation is completed the progress bar should disappear and the stack should appear on the list with a green Status.
 
 You must then connect to each slave using the command 
-ssh root@ip_slave 
+- ssh root@ip_slave 
 and then run the command
-slave
+- slave
 You should have the following message :
 socket: Success
 bind: Success
